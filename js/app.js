@@ -9,28 +9,38 @@ function createWeatherPanel(name, latitude, longitude) {
     panel.className = "panel weather-panel";
 
     panel.innerHTML = `
-        <div class="panel-heading">
-            <div>
-                <h2>${name}</h2>
+
+
+        <div class="panel-layout">
+
+            <div class="location-inputs">
+                <label>
+                    Latitude
+                    <input type="number" data-role="latitude"
+                        value="${latitude}" step="0.001">
+                </label>
+
+                <label>
+                    Longitude
+                    <input type="number" data-role="longitude"
+                        value="${longitude}" step="0.001">
+                </label>
             </div>
-            <button type="button" data-role="refresh">Refresh data</button>
+
+            <div class="panel-heading">
+                <div>
+                    <h2>${name}</h2>
+                </div>
+
+                <button type="button" data-role="refresh">
+                    Refresh data
+                </button>
+            </div>
+
         </div>
 
-        <div class="location-inputs">
-            <label>
-                Latitude
-                <input type="number" data-role="latitude"
-                    value="${latitude}" step="0.001">
-            </label>
 
-            <label>
-                Longitude
-                <input type="number" data-role="longitude"
-                    value="${longitude}" step="0.001">
-            </label>
-        </div>
 
-        <p class="status" data-role="status">Loading live data...</p>
 
         <div class="metrics" data-role="metrics" hidden>
             <article class="metric">
@@ -64,13 +74,15 @@ function createWeatherPanel(name, latitude, longitude) {
             </article>
         </div>
 
+        <p class="status" data-role="status">Loading live data...</p>
         <p class="updated" data-role="updated"></p>
-
-        <details class="api-debug">
-            <summary>API response (raw JSON)</summary>
-            <pre data-role="api-output"></pre>
-        </details>
     `;
+
+    //     <details class="api-debug">
+    //         <summary>API response (raw JSON)</summary>
+    //         <pre data-role="api-output"></pre>
+    //     </details>
+    // `;
 
     // Get elements belonging to THIS panel only
     const get = role => panel.querySelector(`[data-role="${role}"]`);
@@ -141,9 +153,9 @@ function createWeatherPanel(name, latitude, longitude) {
             get("wind-direction").textContent =
                 `${current.wind_direction_10m} ${units.wind_direction_10m}`;
 
-            // Display raw JSON
-            get("api-output").textContent =
-                JSON.stringify(result, null, 2);
+            // // Display raw JSON
+            // get("api-output").textContent =
+            //     JSON.stringify(result, null, 2);
 
             get("metrics").hidden = false;
 
@@ -154,12 +166,9 @@ function createWeatherPanel(name, latitude, longitude) {
 
         } catch (error) {
             console.error(error);
-
             status.textContent = "Could not load weather data.";
             status.classList.add("error");
-
             get("api-output").textContent = error.message;
-
         } finally {
             refreshButton.disabled = false;
         }
