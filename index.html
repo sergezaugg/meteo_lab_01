@@ -4,31 +4,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Minimal GitHub Pages demo fetching live weather data from Open-Meteo.">
-  <title>Live API Demo</title>
+  <meta name="description" content="Data analytics and interactive applications.">
+  <title>Meteo Explorer</title>
   <link rel="stylesheet" href="./css/styles.css">
-  <script src="./js/app.js" defer></script>
+  <script src="./js/theme.js" defer></script>
+
 </head>
 
 <body>
+  <header>
+    <nav class="navbar">
+      <a href="./index.html" class="nav-logo">
+        Meteo Explorer
+      </a>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./pages/page01.html" class="active">Compare</a></li>
+        <li><a href="./pages/page02.html" class="active">Map</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" type="button">
+        🌙 Dark mode
+      </button>
 
-
+    </nav>
+  </header>
   <main class="container">
-    <header>
-      <h1>Meteo Comparator</h1>
-    </header>
-
-    <div id="weather-panels" class="weather-grid"></div>
-
-    <footer>
-      <span>Data: <a href="https://open-meteo.com/">Open-Meteo</a></span>
-    </footer>
+    <h1>Welcome</h1>
+    <p>Welcome to my website.</p>
   </main>
-
-
-
-
-
 </body>
 
 </html>

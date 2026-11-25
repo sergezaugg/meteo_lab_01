@@ -1,4 +1,6 @@
 
+
+
 :root {
     color-scheme: light;
 
@@ -14,15 +16,78 @@
     --border: #E3D9C9;
 
     /* Accent */
-    --accent: #B87955;
+    --accent: #CC9D5E;
+    --accent-hover: #AD8049;
+}
 
-    /* Optional */
-    --accent-hover: #986044;
+/* =========================
+   DARK THEME
+========================= */
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* Backgrounds */
+    --bg: #1C1C1A;
+    --surface: #282824;
+
+    /* Text */
+    --text: #EAE5DA;
+    --muted: #AAA397;
+
+    /* Borders */
+    --border: #45433D;
+
+    /* Accent */
+    --accent: #D6AA70;
+    --accent-hover: #E5BE8D;
 }
 
 
 
+
+/* =========================
+   THEME SWITCH
+========================= */
+
+.theme-toggle {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.theme-toggle:hover {
+    background: var(--bg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 * { box-sizing: border-box; }
+
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 
 body {
   margin: 0;
@@ -33,14 +98,15 @@ body {
 }
 
 .container {
-  width: min(1050px, calc(100% - 40px));
-  margin: 72px auto;
+    width: min(1050px, calc(100% - 40px));
+    margin: 45px auto;
 }
 
-.container h1{
-  text-align: center;
-  font-size: 2rem;
-  margin: 10px 10 30 10 auto;
+
+.container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 10px 0 30px;
 }
 
 
@@ -157,6 +223,8 @@ a { color: var(--accent); }
 
 
 
+
+
 .api-debug {
     margin-top: 30px;
 }
@@ -196,6 +264,67 @@ a { color: var(--accent); }
     flex-direction: column;
     gap: 5px;
 }
+
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+  position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+
+    background: var(--surface);
+}
+
+
+.nav-logo {
+    color: var(--text);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+   
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+   
+
+
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+
 
 
 

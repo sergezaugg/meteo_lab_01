@@ -178,9 +178,9 @@ function createWeatherPanel(name, latitude, longitude) {
 // Instantiate weather panels
 weatherContainer.append(
     createWeatherPanel("Site 1", 46.948, 7.447),
-    createWeatherPanel("Site 1", 47.3769, 8.5417),
-    createWeatherPanel("Site 1", 46.2044, 6.1432),
-    createWeatherPanel("Site 1", 47.5596, 7.5886)
+    createWeatherPanel("Site 2", 47.3769, 8.5417),
+    createWeatherPanel("Site 3", 46.2044, 6.1432),
+    createWeatherPanel("Site 4", 47.5596, 7.5886)
 );
 
 
