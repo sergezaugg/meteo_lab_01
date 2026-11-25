@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Minimal GitHub Pages demo fetching live weather data from Open-Meteo.">
+  <title>Live API Demo</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Live Data Explorer</h1>
+    </header>
+
+    <section class="panel" aria-labelledby="weather-heading">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">EXTERNAL API</p>
+          <h2 id="weather-heading">Weather in Bern</h2>
+        </div>
+        <button id="refresh-button" type="button">Refresh data</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite">Loading live data…</p>
+
+      <div id="weather-data" class="metrics" hidden>
+        <article class="metric">
+          <span class="metric-label">Temperature</span>
+          <strong id="temperature">—</strong>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Humidity</span>
+          <strong id="humidity">—</strong>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Wind speed</span>
+          <strong id="wind">—</strong>
+        </article>
+      </div>
+
+      <p id="updated" class="updated"></p>
+    </section>
+
+    <footer>
+      <span>Data: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
+    </footer>
+  </main>
+</body>
+</html>
