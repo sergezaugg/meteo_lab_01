@@ -44,9 +44,10 @@ h1 {
 }
 
 .panel {
-  padding: 28px;
+  padding: 30px;
+  margin: 30px;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 16px;
   box-shadow: 0 12px 36px rgb(25 40 70 / 6%);
 }
@@ -132,3 +133,24 @@ a { color: var(--accent); }
   .metrics { grid-template-columns: 1fr; }
   footer { flex-direction: column; }
 }
+
+
+
+.api-debug {
+    margin-top: 30px;
+}
+
+#api-output {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    overflow-x: auto;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+
+
+
