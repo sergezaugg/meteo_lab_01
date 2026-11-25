@@ -13,87 +13,19 @@
 <body>
 
 
-
-  
   <main class="container">
     <header>
       <h1>Live Data Explorer</h1>
     </header>
 
-    <section class="panel">
-      <div class="location-inputs">
-        <label for="latitude">Latitude</label>
-        <input type="number" id="latitude" value="46.948" step="0.001">
-        <label for="longitude">Longitude</label>
-        <input type="number" id="longitude" value="7.447" step="0.001">
-      </div>
-    </section>
-
-    <section class="panel">
-      <div class="panel-heading">
-        <div>
-          <p class="eyebrow">EXTERNAL API</p>
-          <h2 id="weather-heading">Weather Explorer</h2>
-        </div>
-        <button id="refresh-button" type="button">Refresh data</button>
-      </div>
-
-      <p id="status" class="status" role="status" aria-live="polite">
-        Loading live data...
-      </p>
-
-      <div id="weather-data" class="metrics" hidden>
-        <article class="metric">
-          <span class="metric-label">Temperature</span>
-          <strong id="temperature">—</strong>
-        </article>
-
-        <article class="metric">
-          <span class="metric-label">Humidity</span>
-          <strong id="humidity">—</strong>
-        </article>
-
-        <article class="metric">
-          <span class="metric-label">Precipitation</span>
-          <strong id="precipitation">—</strong>
-        </article>
-
-        <article class="metric">
-          <span class="metric-label">Cloud cover</span>
-          <strong id="cloud_cov">—</strong>
-        </article>
-
-        <article class="metric">
-          <span class="metric-label">Wind speed</span>
-          <strong id="wind">—</strong>
-        </article>
-
-        <article class="metric">
-          <span class="metric-label">Wind direction</span>
-          <strong id="wind_direc">—</strong>
-        </article>
-
-
-      </div>
-
-      <p id="updated" class="updated"></p>
-    </section>
-
-    <!-- Raw API response -->
-    <section class="panel api-debug">
-      <h2>API response (raw JSON)</h2>
-      <pre id="api-output"></pre>
-    </section>
-
-
-
-
-
+    <div id="weather-panels" class="weather-grid"></div>
 
     <footer>
-      <span>Data: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
+      <span>Data: <a href="https://open-meteo.com/">Open-Meteo</a></span>
     </footer>
   </main>
+
+
 
 
 
